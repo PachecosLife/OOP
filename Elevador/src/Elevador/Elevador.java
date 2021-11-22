@@ -1,13 +1,14 @@
 package Elevador;
 
 	public class Elevador {
-		
+		//ATRIBUTOS 
 		private int terreo = 0;
 		private int totAndar = 10;
 		private int andarAtual = 0;
 		private int capacidade = 7;
 		private int presentes = 0;
 	
+		//MÉTODO CONSTRUTOR
 		public Elevador(int terreo, int totAndar, int andarAtual, int capacidade, int presentes) {
 			super();
 			this.terreo = terreo;
@@ -17,6 +18,8 @@ package Elevador;
 			this.presentes = 0;
 		}
 
+		
+		//MÉTODOS DO ELEVADOR
 		public void entra () {
 			if (presentes < 7) {
 			this.presentes += 1; 
@@ -50,6 +53,8 @@ package Elevador;
 			}
 		}
 
+		
+		//MÉTODOS DE SETTER & GETTER
 		public int getTerreo() {
 			return terreo;
 		}
@@ -90,6 +95,8 @@ package Elevador;
 			this.presentes = presentes;
 		}
 
+		
+		//MÉTODO TO STRING
 		@Override
 		public String toString() {
 			return ", Terreo = " + terreo + "\n, Total Andares = " + totAndar + "\n, Andar Atual = " + andarAtual
