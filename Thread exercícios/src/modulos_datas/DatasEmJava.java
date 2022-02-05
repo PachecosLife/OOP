@@ -1,27 +1,25 @@
 package modulos_datas;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class DatasEmJava {
 		
-		public static void main(String[] args) {
+		public static void main(String[] args) throws ParseException {
 			
-			Date date = new Date();
+			//COMPARANDO DATAS USANDO COMO EXEMPLO, O VENCIMENTO DE UM BOLETO//
 			
-			System.out.println("Data em MILISEGUNDOS = " + date.getTime());
-			System.out.println("Dia do MÊS = " + date.getDate());
-			System.out.println("Dia da SEMANA = " + date.getDay());
-			System.out.println("HORÁRIO = " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds());
-			System.out.println("ANO = " + (date.getYear() + 1900));
-			System.out.println("=====");
+			SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
 			
-			//-------------------------- SIMPLE DATE FORMAT ---------------------------//
-			//                     ELE FORMATA UMA STRING EM DATA                      //
+			Date dataVencimentoBoleto = simpleDateFormat.parse("10/04/2022");
+			Date dataAtualHoje = simpleDateFormat.parse("07/04/2022");
 			
-			SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy - HH:mm:ss");
-			System.out.println("FORMATOU DATA EM STRING = " + simpleDateFormat.format(date));
-			
+			if(dataVencimentoBoleto.after(dataAtualHoje)) {
+				System.out.println("BOLETO NÃO VENCIDO");
+			}else {
+				System.out.println("PENDENTE DE PAGAMENTO");
+			}
 			
 		}
 
